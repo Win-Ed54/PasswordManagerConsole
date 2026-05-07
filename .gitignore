@@ -1,0 +1,14 @@
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.log
+*.tmp
+.env
+exports/
+reports/
+reportes/
+*.csv
+*.txt

@@ -1,21 +1,21 @@
-# PasswordManagerConsole
+# Password Manager Console
 
-Aplicación de consola desarrollada en C# para generar contraseñas seguras y administrar cuentas básicas de manera local.
+Aplicación de consola desarrollada en **C# / .NET 8** para generar contraseñas seguras y administrar cuentas básicas de forma local.
 
-Este proyecto fue creado como práctica de programación en C#, utilizando clases, listas, validaciones, menús interactivos y exportación de reportes.
+Este proyecto fue creado como práctica para reforzar programación orientada a objetos, manejo de listas, validaciones, menús interactivos y exportación de reportes desde consola.
 
 ---
 
-## Objetivo del proyecto
-
-El objetivo principal es construir un gestor simple de contraseñas desde consola que permita al usuario:
+## Funcionalidades
 
 - Generar contraseñas seguras.
 - Guardar cuentas con sitio, usuario, contraseña y categoría.
 - Ver cuentas guardadas.
 - Buscar cuentas por sitio, usuario o categoría.
-- Eliminar cuentas.
-- Exportar un reporte en archivo `.txt`.
+- Eliminar cuentas registradas.
+- Exportar un reporte básico en archivo `.txt`.
+- Validar datos ingresados por el usuario.
+- Menú interactivo desde consola.
 
 ---
 
@@ -24,20 +24,19 @@ El objetivo principal es construir un gestor simple de contraseñas desde consol
 - C#
 - .NET 8
 - Aplicación de consola
-- Visual Studio Code
+- Programación orientada a objetos
+- Git / GitHub
 
 ---
 
-## Funcionalidades
+## Estructura del proyecto
 
-El programa cuenta con el siguiente menú principal:
-
-```text
-===== Gestor de Contraseñas =====
-1. Generar contraseña segura
-2. Guardar Cuenta
-3. Ver cuentas guardadas
-4. Buscar cuenta
-5. Eliminar cuentas
-6. Exportar reporte
-7. Salir
+```txt
+PasswordManagerConsole/
+│
+├── Account.cs
+├── PasswordGenerator.cs
+├── Program.cs
+├── PasswordManagerConsole.csproj
+├── README.md
+└── .gitignore
