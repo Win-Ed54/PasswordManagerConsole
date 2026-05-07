@@ -209,8 +209,46 @@ while (!salir)
            break;
 
         case "5":
-           Console.WriteLine("Eliminar cuentas");
-                
+           Console.WriteLine("///Eliminar cuenta///");
+           if(cuentas.Count == 0)
+            {
+                Console.WriteLine("No hay cuentas guardadas para eliminar.");
+                break;
+            }
+            Console.Write("Ingrese el Id de la cuenta a eliminar: ");
+            string inputId = Console.ReadLine() ?? "";
+
+            if(!int.TryParse(inputId, out int idEliminar))
+            {
+                Console.WriteLine("El Id debe ser un número.");
+                break;
+            }
+
+            Account? cuentaEliminar = cuentas.FirstOrDefault(c => c.Id == idEliminar);
+            if(cuentaEliminar == null)
+            {
+                Console.WriteLine("No se encontró una cuenta con el Id proporcionado.");
+                break;
+            }
+            
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine($"Id: {cuentaEliminar.Id}");
+            Console.WriteLine($"Sitio: {cuentaEliminar.Site}");
+            Console.WriteLine($"Usuario: {cuentaEliminar.User}");
+            Console.WriteLine($"Categoría: {cuentaEliminar.Category}");
+            Console.WriteLine("--------------------------------");
+
+            Console.Write("¿Está seguro que desea eliminar esta cuenta? (s/n): ");
+            string confirmacionEliminar = Console.ReadLine() ?? "";
+            if(confirmacionEliminar.ToLower() == "s")
+            {
+                cuentas.Remove(cuentaEliminar);
+                Console.WriteLine("Cuenta eliminada exitosamente.");
+            }
+            else
+            {
+                Console.WriteLine("Eliminación cancelada.");
+            }
            break;
         case "6":
            Console.WriteLine("Exportar reporte");
