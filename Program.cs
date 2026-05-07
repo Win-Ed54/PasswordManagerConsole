@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 List<Account> cuentas = new List<Account>();
 int siguienteId = 1;
 bool salir = false;
@@ -66,8 +66,6 @@ while (!salir)
            string sitio = Console.ReadLine()??"";
            Console.Write("Usuario o correo: ");
            string user = Console.ReadLine() ?? "";
-           Console.Write("Contraseña: ");
-           string password = Console.ReadLine() ?? "";
            Console.Write("Categoría: ");
            string category = Console.ReadLine() ?? "";
 
@@ -75,38 +73,38 @@ while (!salir)
            string generarPasswordInput = Console.ReadLine() ?? "";
 
            string password = "";
-           if(respuestaGenerar.ToLower() == "s")
+           if(generarPasswordInput.ToLower() == "s")
            {
                 Console.Write("Ingrese la longitud de la contraseña: ");
-                string inputLength = Console.ReadLine() ?? "";
-                if(!int.TryParse(inputLength, out int length))
+                string inputLengthGeneracion = Console.ReadLine() ?? "";
+                if(!int.TryParse(inputLengthGeneracion, out int lengthGeneracion))
                 {
                     Console.WriteLine("La longitud debe ser un número.");
                     break;
                 }
-                if(length < 6)
+                if(lengthGeneracion < 6)
                 {
                     Console.WriteLine("La contraseña debe tener al menos 6 caracteres");
                     break;
                 }
 
                 Console.Write("Desea incluir mayúsculas? (s/n): ");
-                string includeUppercaseInput = Console.ReadLine() ?? "";
-                bool includeUppercase = includeUppercaseInput.ToLower() == "s";
+                string includeUppercaseInputGeneracion = Console.ReadLine() ?? "";
+                bool includeUppercaseGeneracion = includeUppercaseInputGeneracion.ToLower() == "s";
                 
                 Console.Write("Desea incluir números? (s/n): ");
-                string includeNumbersInput = Console.ReadLine() ?? "";
-                bool includeNumbers = includeNumbersInput.ToLower() == "s";
+                string includeNumbersInputGeneracion = Console.ReadLine() ?? "";
+                bool includeNumbersGeneracion = includeNumbersInputGeneracion.ToLower() == "s";
 
                 Console.Write("Desea incluir símbolos? (s/n): ");
-                string includeSymbolsInput = Console.ReadLine() ?? "";
-                bool includeSymbols = includeSymbolsInput.ToLower() == "s";
+                string includeSymbolsInputGeneracion = Console.ReadLine() ?? "";
+                bool includeSymbolsGeneracion = includeSymbolsInputGeneracion.ToLower() == "s";
 
                 password = PasswordGenerator.GeneratePassword(
-                    length,
-                    includeUppercase,
-                    includeNumbers,
-                    includeSymbols
+                    lengthGeneracion,
+                    includeUppercaseGeneracion,
+                    includeNumbersGeneracion,
+                    includeSymbolsGeneracion
                    );
 
                    Console.WriteLine($"Contraseña generada sugerida: {password}");
